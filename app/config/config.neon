@@ -25,3 +25,5 @@ services:
 	- JunakKompetence\Model\Repositories\VudceItemsRepository
 	- JunakKompetence\Model\Repositories\CompetenceGroupsRepository
 	- JunakKompetence\Model\Facades\CompetenceFacade
+	- JunakKompetence\Model\Facades\CekatelItemsFacade
+	- JunakKompetence\Model\Facades\VudceItemsFacade

@@ -23,9 +23,8 @@
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
 	<header>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,16 +37,18 @@
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li>
-							<a href="">Skupiny kompetencí</a>
+						<li n:class="$presenter->isLinkCurrent('Competence:*')?'active'">
+							<a href="{link Competence:show id=>1}">Prohlížení kompetencí</a>
 						</li>
-						<li>
-							<a href="">Vůdcovky</a>
+						<li n:class="$presenter->isLinkCurrent('Vudce:*')?'active'">
+							<a href="{link Vudce}">Vůdcovky</a>
 						</li>
-						<li>
-							<a href="">Čekatelky</a>
+						<li n:class="$presenter->isLinkCurrent('Cekatel:*')?'active'">
+							<a href="{link Cekatel}">Čekatelky</a>
 						</li>
-						<li><a href="">O kompetenčním modelu</a></li>
+						<li n:class="$presenter->isLinkCurrent('Article:about')?'active'">
+							<a href="{link Article:about}">O kompetenčním modelu</a>
+						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>

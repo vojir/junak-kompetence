@@ -1,0 +1,48 @@
+{block title}Kompetence {$competence->name}{/block}
+{block content}
+
+  <main class="container-fluid maxWidth">
+    <h1 class="page-header">Prohlížení kompetencí</h1>
+    <div class="row content">
+      <div class="col-md-3 col-lg-2">
+        <ul class="nav nav-pills nav-stacked">
+          {foreach $competenceGroups as $competenceGroup}
+            <li n:class="$competence->competenceGroup->competenceGroupId==$competenceGroup->competenceGroupId?active">
+              <a href="{link Competence:group id=>$competenceGroup->competenceGroupId}">{$competenceGroup->name}</a>
+            </li>
+          {/foreach}
+        </ul>
+      </div>
+      <div class="col-md-3 col-lg-3 itemsMenu">
+        <ul class="nav nav-pills nav-stacked">
+          {foreach $competence->competenceGroup->competences as $competenceItem}
+            <li n:class="$competenceItem->competenceId==$competence->competenceId?active">
+              <a href="{link Competence:show id=>$competenceItem->competenceId}">{$competenceItem->name}</a>
+            </li>
+          {/foreach}
+        </ul>
+      </div>
+      <article class="col-md-6 col-lg-7">
+        {*competence content*}
+        <h2>{$competence->name}</h2>
+        <h3>Čekatel</h3>
+        <p>{$competence->levelCekatel}</p>
+        {if !empty($competence->cekatelItems)}
+          <ul>
+            {foreach $competence->cekatelItems as $cekatelItem}
+              <li><a href="{link Cekatel:show id=>$cekatelItem->cekatelItemId}">{$cekatelItem->name}</a></li>
+            {/foreach}
+          </ul>
+        {/if}
+        <h3>Vůdce</h3>
+        <p>{$competence->levelVudce}</p>
+        {if !empty($competence->vudceItems)}
+          <ul>
+            {foreach $competence->vudceItems as $vudceItem}
+              <li><a href="{link Vudce:show id=>$vudceItem->vudceItemId}">{$vudceItem->name}</a></li>
+            {/foreach}
+          </ul>
+        {/if}
+      </article>
+    </div>
+  </main>

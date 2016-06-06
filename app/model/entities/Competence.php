@@ -13,8 +13,8 @@ use LeanMapper\Entity;
  * @property string|null $levelCekatel
  * @property string|null $levelVudce
  * @property CompetenceGroup $competenceGroup m:hasOne
- * @property VudceItem[] $vudceItems m:hasMany(vudce_item_id:competences_vudce_items:competence_id:competences)
- * @property CekatelItem[] $cekatelItems m:hasMany(cekatel_item_id:competences_cekatel_items:competence_id:competences)
+ * @property VudceItem[] $vudceItems m:hasMany(:::vudce_items)
+ * @property CekatelItem[] $cekatelItems m:hasMany(:::cekatel_items)
  */
 class Competence extends Entity{
 

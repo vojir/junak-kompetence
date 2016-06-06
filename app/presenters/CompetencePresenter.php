@@ -32,6 +32,11 @@ class CompetencePresenter extends BasePresenter{
     $this->template->competenceGroup=$this->competencesFacade->findCompetenceGroup($id);
   }
 
+  public function beforeRender(){
+    parent::beforeRender();
+    $this->template->competenceGroups=$this->competencesFacade->findCompetenceGroups();
+  }
+
 
   /**
    * @param CompetenceFacade $competenceFacade

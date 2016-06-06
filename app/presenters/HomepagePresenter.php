@@ -2,16 +2,20 @@
 
 namespace JunakKompetence\Presenters;
 
+use JunakKompetence\Model\Facades\CompetenceFacade;
 use Nette;
-use App\Model;
 
+class HomepagePresenter extends BasePresenter{
+  /** @var  CompetenceFacade $competenceFacade */
+  private $competenceFacade;
 
-class HomepagePresenter extends BasePresenter
-{
+  public function renderDefault(){
+    
 
-	public function renderDefault()
-	{
-		$this->template->anyVariable = 'any value';
-	}
+  }
+
+  public function injectCompetenceFacade(CompetenceFacade $competenceFacade){
+    $this->competenceFacade=$competenceFacade;
+  }
 
 }

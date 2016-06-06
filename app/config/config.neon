@@ -1,7 +1,3 @@
-#
-# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
-# https://nette.org/security-warning
-#
 parameters:
 
 
@@ -21,3 +17,11 @@ session:
 
 services:
 	router: JunakKompetence\RouterFactory::createRouter
+	- LeanMapper\Connection(%mainDatabase%)
+	- LeanMapper\DefaultEntityFactory
+	- JunakKompetence\Model\Mappers\StandardMapper
+	- JunakKompetence\Model\Repositories\CompetencesRepository
+	- JunakKompetence\Model\Repositories\CekatelItemsRepository
+	- JunakKompetence\Model\Repositories\VudceItemsRepository
+	- JunakKompetence\Model\Repositories\CompetenceGroupsRepository
+	- JunakKompetence\Model\Facades\CompetenceFacade

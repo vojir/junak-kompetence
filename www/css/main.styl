@@ -1,5 +1,9 @@
+activeBackgroundColor=rgb(51,122,183)
+activeChildBackgroundColor=#eef5ff
+
 body
   padding-top 60px
+  padding-bottom 80px
   @media screen and (min-width: 750px) and (max-width: 830px)
     padding-top 100px
 
@@ -11,13 +15,16 @@ body
   h1.page-header
     margin-top 10px !important
 
+  .navPillDescription
+    color gray
   p.hint
     color gray
     &.withTopPadding
       padding-top 20px
 
+
   article
-    >h2
+    h2
       margin-top 0
       padding-top 0
     h3
@@ -26,3 +33,32 @@ body
     ul
       li
         margin-top 8px
+
+    nav
+      opacity 0.7
+      margin-top 50px
+      position relative
+      overflow auto
+      .prev
+        float left
+      .next
+        float right
+
+  @media screen and (min-width: 992px)
+    .columnNav0
+      &.withActive
+        border-right 5px solid activeBackgroundColor
+    .columnNav1
+      margin-right -15px
+      &.withActive
+        border-right 5px solid activeBackgroundColor
+      &.withActiveChild
+        .active a
+          background activeChildBackgroundColor
+          color black
+    .columnNav2
+      margin-left -15px
+      &.withActive
+        border-left 5px solid activeChildBackgroundColor
+        background activeChildBackgroundColor
+        border-right 5px solid activeBackgroundColor

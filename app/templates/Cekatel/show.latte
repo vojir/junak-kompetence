@@ -8,7 +8,7 @@
 
   <div class="row content">
     <div class="col-md-5 col-lg-5 hidden-sm hidden-xs">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked columnNav0 withActive">
         {foreach $cekatelItems as $cekatelItemsItem}
           <li n:class="$cekatelItem->cekatelItemId==$cekatelItemsItem->cekatelItemId?active">
             <a href="{link Cekatel:show id=>$cekatelItemsItem->cekatelItemId}"><span class="number">{$cekatelItemsItem->cekatelItemId}.</span> {$cekatelItemsItem->name}</a>
@@ -21,7 +21,7 @@
       <p>{$cekatelItem->description}</p>
 
       {if empty($cekatelItem->competences)}
-        <p class="hint">Není zahrnuto v kompetenčním modelu</p>
+        <p class="hint withTopPadding">Není zahrnuto v kompetenčním modelu</p>
       {else}
         {foreach $cekatelItem->competences as $competence}
           <h3><a href="{link Competence:show id=>$competence->competenceId}">Kompetence {$competence->name}</a></h3>

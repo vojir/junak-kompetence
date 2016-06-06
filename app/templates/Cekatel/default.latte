@@ -8,18 +8,21 @@
 
   <div class="row content">
     <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked columnNav0 withDescriptions">
         {foreach $cekatelItems as $cekatelItem}
           <li>
-            <a href="{link Cekatel:show id=>$cekatelItem->cekatelItemId}"><span class="number">{$cekatelItem->cekatelItemId}.</span> {$cekatelItem->name}</a>
+            <a href="{link Cekatel:show id=>$cekatelItem->cekatelItemId}"
+              data-description="{$cekatelItem->description}"
+            ><span class="number">{$cekatelItem->cekatelItemId}.</span> {$cekatelItem->name}</a>
           </li>
         {/foreach}
       </ul>
     </div>
     <article class="col-md-7 col-lg-7 hidden-xs hidden-sm">
-      {*competence content*}
-      <p class="hint withTopPadding">Vyberte položku, kterou chcete zobrazit...</p>
-      <div class="content"></div>
+      <div data-spy="affix">
+        <div class="content navPillDescription"></div>
+        <p class="navPillDescription hint withTopPadding">Vyberte položku, kterou chcete zobrazit...</p>
+      </div>
     </article>
   </div>
 </main>

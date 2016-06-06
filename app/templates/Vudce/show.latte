@@ -8,7 +8,7 @@
 
   <div class="row content">
     <div class="col-md-5 col-lg-5 hidden-sm hidden-xs">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked columnNav0 withActive">
         {foreach $vudceItems as $vudceItemsItem}
           <li n:class="$vudceItem->vudceItemId==$vudceItemsItem->vudceItemId?active">
             <a href="{link Vudce:show id=>$vudceItemsItem->vudceItemId}"><span class="number">{$vudceItemsItem->directiveId}.</span> {$vudceItemsItem->name}</a>
@@ -21,7 +21,7 @@
       <p>{$vudceItem->description}</p>
 
       {if empty($vudceItem->competences)}
-        <p class="hint">Není zahrnuto v kompetenčním modelu</p>
+        <p class="hint withTopPadding">Není zahrnuto v kompetenčním modelu</p>
       {else}
         {foreach $vudceItem->competences as $competence}
           <h3><a href="{link Competence:show id=>$competence->competenceId}">Kompetence {$competence->name}</a></h3>

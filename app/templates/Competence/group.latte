@@ -5,7 +5,7 @@
   <h1 class="page-header hidden-xs hidden-sm">Prohlížení kompetencí</h1>
   <div class="row content">
     <div class="col-md-3 col-lg-2 hidden-sm hidden-xs">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked withActive columnNav1">
         {foreach $competenceGroups as $competenceGroupItem}
           <li n:class="$competenceGroup->competenceGroupId==$competenceGroupItem->competenceGroupId?active">
             <a href="{link Competence:group id=>$competenceGroupItem->competenceGroupId}">{$competenceGroupItem->name}</a>
@@ -20,7 +20,7 @@
     </article>
 
     <div class="col-md-3 col-lg-3 col-md-pull-6 col-lg-pull-7 col-sm-12 col-xs-12">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked columnNav2">
         {foreach $competenceGroup->competences as $competenceItem}
           <li>
             <a href="{link Competence:show id=>$competenceItem->competenceId}">{$competenceItem->name}</a>

@@ -6,16 +6,18 @@
   <p class="visible-sm-block visible-xs-block">Vyberte skupinu kompetencí, kterou chcete zobrazit</p>
   <div class="row content">
     <div class="col-md-3 col-lg-4">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked withDescriptions">
         {foreach $competenceGroups as $competenceGroupItem}
           <li>
-            <a href="{link Competence:group id=>$competenceGroupItem->competenceGroupId}">{$competenceGroupItem->name}</a>
+            <a href="{link Competence:group id=>$competenceGroupItem->competenceGroupId}"
+               data-description="{$competenceGroupItem->description}">{$competenceGroupItem->name}</a>
           </li>
         {/foreach}
       </ul>
     </div>
     <article class="col-md-9 col-lg-8 hidden-xs hidden-sm">
-      <p class="hint">Vyberte skupinu kompetencí, kterou chcete zobrazit</p>
+      <div class="content navPillDescription"></div>
+      <p class="hint navPillDescription">Vyberte skupinu kompetencí, kterou chcete zobrazit</p>
     </article>
   </div>
 </main>

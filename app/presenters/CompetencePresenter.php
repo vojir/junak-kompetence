@@ -16,6 +16,22 @@ class CompetencePresenter extends BasePresenter{
   private $competencesFacade;
 
 
+  public function actionPrev($id){
+    try{
+      $competence=$this->competencesFacade->findPreviousCompetence($id);
+    }catch(\Exception $e){}
+
+    $this->redirect('show',['id'=>empty($competence)?$id:$competence->competenceId]);
+  }
+
+  public function actionNext($id){
+    try{
+      $competence=$this->competencesFacade->findNextCompetence($id);
+    }catch(\Exception $e){}
+
+    $this->redirect('show',['id'=>empty($competence)?$id:$competence->competenceId]);
+  }
+
   /**
    * Akce pro zobrazení detailů jedné kompetence
    * @param int $id

@@ -6,18 +6,22 @@
   <p class="visible-sm-block visible-xs-block">Vyberte položku, kterou chcete zobrazit</p>
   <div class="row content">
     <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked columnNav0 withDescriptions">
         {foreach $vudceItems as $vudceItem}
           <li>
-            <a href="{link Vudce:show id=>$vudceItem->vudceItemId}"><span class="number">{$vudceItem->directiveId}.</span> {$vudceItem->name}</a>
+            <a href="{link Vudce:show id=>$vudceItem->vudceItemId}"
+               data-description="{$vudceItem->description}"
+            ><span class="number">{$vudceItem->directiveId}.</span> {$vudceItem->name}</a>
           </li>
         {/foreach}
       </ul>
     </div>
+
     <article class="col-md-7 col-lg-7 hidden-xs hidden-sm">
-      {*competence content*}
-      <p class="hint withTopPadding">Vyberte položku, kterou chcete zobrazit...</p>
-      <div class="content"></div>
+      <div data-spy="affix">
+        <div class="content navPillDescription"></div>
+        <p class="navPillDescription hint withTopPadding">Vyberte položku, kterou chcete zobrazit...</p>
+        </div>
     </article>
   </div>
 </main>

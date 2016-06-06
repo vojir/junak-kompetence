@@ -26,16 +26,29 @@
         {*competence content*}
         <h2>{$competence->name}</h2>
         <h3>Čekatel</h3>
-        <p>{$competence->levelCekatel}</p>
-        {if !empty($competence->cekatelItems)}
-          <ul>
-            {foreach $competence->cekatelItems as $cekatelItem}
-              <li><a href="{link Cekatel:show id=>$cekatelItem->cekatelItemId}">{$cekatelItem->name}</a></li>
-            {/foreach}
-          </ul>
+        {if empty($competence->levelCekatel)}
+          <p class="hint">Není nezbytně vyžadováno.</p>
+        {else}
+          <p>{$competence->levelCekatel}</p>
+          {if !empty($competence->cekatelItems)}
+            <ul>
+              {foreach $competence->cekatelItems as $cekatelItem}
+                <li><a href="{link Cekatel:show id=>$cekatelItem->cekatelItemId}">{$cekatelItem->name}</a></li>
+              {/foreach}
+            </ul>
+          {/if}
         {/if}
         <h3>Vůdce</h3>
-        <p>{$competence->levelVudce}</p>
+        {if empty($competence->levelVudce)}
+          {if !empty($competence->levelCekatel)}
+            <p>Stejné nároky jako na čekatele</p>
+            <p class="hint">$competence->levelCekatel</p>
+          {else}
+            <p class="hint">Popis není k dispozici.</p>
+          {/if}
+        {else}
+          <p>{$competence->levelVudce}</p>
+        {/if}
         {if !empty($competence->vudceItems)}
           <ul>
             {foreach $competence->vudceItems as $vudceItem}

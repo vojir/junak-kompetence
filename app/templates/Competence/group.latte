@@ -1,0 +1,32 @@
+{block title}Skupina kompetencí {$competenceGroup->name}{/block}
+{block content}
+
+<main class="container-fluid maxWidth">
+  <h1 class="page-header hidden-xs hidden-sm">Prohlížení kompetencí</h1>
+  <div class="row content">
+    <div class="col-md-3 col-lg-2 hidden-sm hidden-xs">
+      <ul class="nav nav-pills nav-stacked">
+        {foreach $competenceGroups as $competenceGroupItem}
+          <li n:class="$competenceGroup->competenceGroupId==$competenceGroupItem->competenceGroupId?active">
+            <a href="{link Competence:group id=>$competenceGroupItem->competenceGroupId}">{$competenceGroupItem->name}</a>
+          </li>
+        {/foreach}
+      </ul>
+    </div>
+
+    <article class="col-md-6 col-lg-7 col-md-push-3 col-lg-push-3 col-sm-12 col-xs-12">
+      <h2>{$competenceGroup->name}</h2>
+      <p>{$competenceGroup->description}</p>
+    </article>
+
+    <div class="col-md-3 col-lg-3 col-md-pull-6 col-lg-pull-7 col-sm-12 col-xs-12">
+      <ul class="nav nav-pills nav-stacked">
+        {foreach $competenceGroup->competences as $competenceItem}
+          <li>
+            <a href="{link Competence:show id=>$competenceItem->competenceId}">{$competenceItem->name}</a>
+          </li>
+        {/foreach}
+      </ul>
+    </div>
+  </div>
+</main>

@@ -20,14 +20,15 @@
       <h2>{$cekatelItem->cekatelItemId}. {$cekatelItem->name}</h2>
       <p>{$cekatelItem->description}</p>
 
-      {if !empty($cekatelItem->competences)}
+      {if empty($cekatelItem->competences)}
         <p class="hint">Není zahrnuto v kompetenčním modelu</p>
       {else}
-        <ul>
-          {foreach $cekatelItem->competences as $competence}
-            <li><a href="{link Competence:show id=>$competence->competenceId}">{$competence->name}</a></li>
-          {/foreach}
-        </ul>
+        {foreach $cekatelItem->competences as $competence}
+          <h3><a href="{link Competence:show id=>$competence->competenceId}">Kompetence {$competence->name}</a></h3>
+          <p>
+            {$competence->levelCekatel}
+          </p>
+        {/foreach}
       {/if}
     </article>
   </div>

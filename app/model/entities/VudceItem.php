@@ -14,5 +14,5 @@ use LeanMapper\Entity;
  * @property Competence[] $competences m:hasMany(vudce_item_id:competences_vudce_items:competence_id:competences)
  */
 class VudceItem extends Entity{
-
+  
 }

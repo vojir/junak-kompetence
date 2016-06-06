@@ -1,8 +1,28 @@
-header
-  .navbar {
-    margin-bottom: 0;
-  h1
-    padding 0
-    margin 0
-    a
+body
+  padding-top 60px
+  @media screen and (min-width: 750px) and (max-width: 830px)
+    padding-top 100px
+
+  >.navbar
+    margin-bottom 0
+    a.navbar-brand
       color white !important
+
+  h1.page-header
+    margin-top 10px !important
+
+  p.hint
+    color gray
+    &.withTopPadding
+      padding-top 20px
+
+  article
+    >h2
+      margin-top 0
+      padding-top 0
+    h3
+      margin-top 35px
+      font-size 1.3em
+    ul
+      li
+        margin-top 8px

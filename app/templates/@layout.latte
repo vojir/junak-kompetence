@@ -23,37 +23,36 @@
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-	<header>
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid maxWidth">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<h1><a class="navbar-brand" href="{$basePath}">Kompetenční model Junáka</a></h1>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li n:class="$presenter->isLinkCurrent('Competence:*')?'active'">
-							<a href="{link Competence:default}">Prohlížení kompetencí</a>
-						</li>
-						<li n:class="$presenter->isLinkCurrent('Vudce:*')?'active'">
-							<a href="{link Vudce:default}">Vůdcovky</a>
-						</li>
-						<li n:class="$presenter->isLinkCurrent('Cekatel:*')?'active'">
-							<a href="{link Cekatel:default}">Čekatelky</a>
-						</li>
-						<li n:class="$presenter->isLinkCurrent('Article:about')?'active'">
-							<a href="{link Article:about}">O kompetenčním modelu</a>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid maxWidth">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{$basePath}">Kompetenční model Junáka</a>
 			</div>
-		</nav>
-	</header>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li n:class="$presenter->isLinkCurrent('Competence:*')?'active'">
+						<a href="{link Competence:default}">Prohlížení kompetencí</a>
+					</li>
+					<li n:class="$presenter->isLinkCurrent('Vudce:*')?'active'">
+						<a href="{link Vudce:default}">Vůdcovky</a>
+					</li>
+					<li n:class="$presenter->isLinkCurrent('Cekatel:*')?'active'">
+						<a href="{link Cekatel:default}">Čekatelky</a>
+					</li>
+					<li n:class="$presenter->isLinkCurrent('Article:about')?'active'">
+						<a href="{link Article:about}">O kompetenčním modelu</a>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
 	{include content}
 
 	{block scripts}

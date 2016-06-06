@@ -20,14 +20,19 @@
       <h2>{$vudceItem->directiveId}. {$vudceItem->name}</h2>
       <p>{$vudceItem->description}</p>
 
-      {if !empty($vudceItem->competences)}
+      {if empty($vudceItem->competences)}
         <p class="hint">Není zahrnuto v kompetenčním modelu</p>
       {else}
-        <ul>
-          {foreach $vudceItem->competences as $competence}
-            <li><a href="{link Competence:show id=>$competence->competenceId}">{$competence->name}</a></li>
-          {/foreach}
-        </ul>
+        {foreach $vudceItem->competences as $competence}
+          <h3><a href="{link Competence:show id=>$competence->competenceId}">Kompetence {$competence->name}</a></h3>
+          <p>
+          {if empty($competence->levelVudce)}
+            {$competence->levelCekatel}
+          {else}
+            {$competence->levelVudce}
+          {/if}
+          </p>
+        {/foreach}
       {/if}
     </article>
   </div>

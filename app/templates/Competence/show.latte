@@ -42,7 +42,7 @@
         {if empty($competence->levelVudce)}
           {if !empty($competence->levelCekatel)}
             <p>Stejné nároky jako na čekatele</p>
-            <p class="hint">$competence->levelCekatel</p>
+            <p class="hint">{$competence->levelCekatel}</p>
           {else}
             <p class="hint">Popis není k dispozici.</p>
           {/if}

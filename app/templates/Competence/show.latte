@@ -4,7 +4,7 @@
   <main class="container-fluid maxWidth">
     <h1 class="page-header">Prohlížení kompetencí</h1>
     <div class="row content">
-      <div class="col-md-3 col-lg-2">
+      <div class="col-md-3 col-lg-2 hidden-sm hidden-xs">
         <ul class="nav nav-pills nav-stacked">
           {foreach $competenceGroups as $competenceGroup}
             <li n:class="$competence->competenceGroup->competenceGroupId==$competenceGroup->competenceGroupId?active">
@@ -13,7 +13,7 @@
           {/foreach}
         </ul>
       </div>
-      <div class="col-md-3 col-lg-3 itemsMenu">
+      <div class="col-md-3 col-lg-3">
         <ul class="nav nav-pills nav-stacked">
           {foreach $competence->competenceGroup->competences as $competenceItem}
             <li n:class="$competenceItem->competenceId==$competence->competenceId?active">

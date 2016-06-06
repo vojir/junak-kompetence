@@ -1,0 +1,32 @@
+{block title}Vůdcovské kompetence{/block}
+{block content}
+
+<main class="container-fluid maxWidth">
+  <h1 class="page-header">Vůdcovské kompetence <small>ke zkoušce</small></h1>
+  <a href="{link Vudce:default}" class="btn btn-default visible-xs-inline-block visible-sm-inline-block">Zpět na přehled kompetencí</a>
+  <div class="row content">
+    <div class="col-md-5 col-lg-5 hidden-sm hidden-xs">
+      <ul class="nav nav-pills nav-stacked">
+        {foreach $vudceItems as $vudceItemsItem}
+          <li n:class="$vudceItem->vudceItemId==$vudceItemsItem->vudceItemId?active">
+            <a href="{link Vudce:show id=>$vudceItemsItem->vudceItemId}"><span class="number">{$vudceItemsItem->directiveId}.</span> {$vudceItemsItem->name}</a>
+          </li>
+        {/foreach}
+      </ul>
+    </div>
+    <article class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+      <h2>{$vudceItem->directiveId}. {$vudceItem->name}</h2>
+      <p>{$vudceItem->description}</p>
+
+      {if !empty($vudceItem->competences)}
+        <p class="hint">Není zahrnuto v kompetenčním modelu</p>
+      {else}
+        <ul>
+          {foreach $vudceItem->competences as $competence}
+            <li><a href="{link Competence:show id=>$competence->competenceId}">{$competence->name}</a></li>
+          {/foreach}
+        </ul>
+      {/if}
+    </article>
+  </div>
+</main>

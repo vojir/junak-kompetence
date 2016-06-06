@@ -22,9 +22,12 @@ class CekatelPresenter extends BasePresenter{
 
   /**
    * Funkce pro zobrazení seznamu čekatelských kompetencí
-   * @param int $id
    */
-  public function renderList($id){
+  public function renderList(){
+  }
+
+  public function beforeRender(){
+    parent::beforeRender();
     $this->template->cekatelItems=$this->cekatelItemsFacade->findCekatelItems();
   }
 

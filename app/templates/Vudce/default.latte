@@ -1,0 +1,22 @@
+{block title}Vůdcovské kompetence{/block}
+{block content}
+
+<main class="container-fluid maxWidth">
+  <h1 class="page-header">Vůdcovské kompetence <small>ke zkoušce</small></h1>
+  <p class="visible-sm-block visible-xs-block">Vyberte položku, kterou chcete zobrazit</p>
+  <div class="row content">
+    <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+      <ul class="nav nav-pills nav-stacked">
+        {foreach $vudceItems as $vudceItem}
+          <li>
+            <a href="{link Vudce:show id=>$vudceItem->vudceItemId}"><span class="number">{$vudceItem->directiveId}.</span> {$vudceItem->name}</a>
+          </li>
+        {/foreach}
+      </ul>
+    </div>
+    <article class="col-md-7 col-lg-7 hidden-xs hidden-sm">
+      {*competence content*}
+      <p class="hint">Vyberte skupinu kompetencí, kterou chcete zobrazit</p>
+    </article>
+  </div>
+</main>

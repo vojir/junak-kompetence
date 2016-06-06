@@ -38,13 +38,13 @@
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li n:class="$presenter->isLinkCurrent('Competence:*')?'active'">
-							<a href="{link Competence:show id=>1}">Prohlížení kompetencí</a>
+							<a href="{link Competence:default}">Prohlížení kompetencí</a>
 						</li>
 						<li n:class="$presenter->isLinkCurrent('Vudce:*')?'active'">
-							<a href="{link Vudce}">Vůdcovky</a>
+							<a href="{link Vudce:default}">Vůdcovky</a>
 						</li>
 						<li n:class="$presenter->isLinkCurrent('Cekatel:*')?'active'">
-							<a href="{link Cekatel}">Čekatelky</a>
+							<a href="{link Cekatel:default}">Čekatelky</a>
 						</li>
 						<li n:class="$presenter->isLinkCurrent('Article:about')?'active'">
 							<a href="{link Article:about}">O kompetenčním modelu</a>

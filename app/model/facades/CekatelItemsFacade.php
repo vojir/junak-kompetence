@@ -28,7 +28,7 @@ class CekatelItemsFacade{
    * @return CekatelItem[]
    */
   public function findCekatelItems(){
-    return $this->cekatelItemsRepository->findAllBy(['order'=>'directive_id']);
+    return $this->cekatelItemsRepository->findAll();
   }
 
 }

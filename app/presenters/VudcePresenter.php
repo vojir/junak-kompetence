@@ -25,6 +25,11 @@ class VudcePresenter extends BasePresenter{
    * @param int $id
    */
   public function renderList($id){
+
+  }
+
+  public function beforeRender(){
+    parent::beforeRender();
     $this->template->vudceItems=$this->vudceItemsFacade->findVudceItems();
   }
 

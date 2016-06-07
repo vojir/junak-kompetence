@@ -2,7 +2,12 @@
 {block content}
 
   <main class="container-fluid maxWidth">
-    <h1 class="page-header">Prohlížení kompetencí</h1>
+    <h1 class="page-header"><span class="visible-lg-inline visible-md-inline">Prohlížení kompetencí - </span>{$competence->competenceGroup->name}</h1>
+
+    <div class="backLink">
+      <a href="{link Competence:group id=>$competence->competenceGroup->competenceGroupId}" class="btn btn-default visible-xs-inline-block visible-sm-inline-block">Zpět na přehled kompetencí</a>
+    </div>
+
     <div class="row content">
       <div class="col-md-3 col-lg-2 hidden-sm hidden-xs">
         <ul class="nav nav-pills nav-stacked columnNav1 withActiveChild">

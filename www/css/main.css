@@ -25,6 +25,9 @@ body p.hint {
 body p.hint.withTopPadding {
   padding-top: 20px;
 }
+body .backLink {
+  margin-bottom: 15px;
+}
 body article h2 {
   margin-top: 0;
   padding-top: 0;

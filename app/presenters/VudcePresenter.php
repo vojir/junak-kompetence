@@ -12,6 +12,22 @@ class VudcePresenter extends BasePresenter{
   /** @var  VudceItemsFacade $vudceItemsFacade */
   private $vudceItemsFacade;
 
+  public function actionPrev($id){
+    try{
+      $vudceItem=$this->vudceItemsFacade->findPreviousVudceItem($id);
+    }catch(\Exception $e){}
+
+    $this->redirect('show',['id'=>empty($vudceItem)?$id:$vudceItem->vudceItemId]);
+  }
+
+  public function actionNext($id){
+    try{
+      $vudceItem=$this->vudceItemsFacade->findNextVudceItem($id);
+    }catch(\Exception $e){}
+
+    $this->redirect('show',['id'=>empty($vudceItem)?$id:$vudceItem->vudceItemId]);
+  }
+
   /**
    * Funkce pro zobrazení jedné vůdcovské kompetence
    * @param int $id

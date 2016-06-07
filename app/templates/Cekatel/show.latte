@@ -30,6 +30,11 @@
           </p>
         {/foreach}
       {/if}
+
+      <nav>
+        <a href="{link Cekatel:prev id=>$cekatelItem->cekatelItemId}" class="btn btn-default prev">předchozí kompetence ČZ</a>
+        <a href="{link Cekatel:next id=>$cekatelItem->cekatelItemId}" class="btn btn-default next">následující kompetence ČZ</a>
+      </nav>
     </article>
   </div>
 </main>

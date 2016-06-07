@@ -21,6 +21,7 @@ body .navPillDescription {
 }
 body p.hint {
   color: #808080;
+  font-style: italic;
 }
 body p.hint.withTopPadding {
   padding-top: 20px;
